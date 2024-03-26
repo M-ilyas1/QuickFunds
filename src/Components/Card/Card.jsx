@@ -27,7 +27,7 @@ function Card() {
   return (
     <>
         <div className='w-[100%] flex justify-center items-center'>
-        <div className='w-[80%] flex gap-5'>
+        <div className='w-[80%] grid grid-cols-1 md:grid-cols-3 gap-5'>
         {
                 cardData.map(({image, heading, paragraph}, index) => {
                     return <div key={index} className='p-10 flex flex-col items-center text-center border-[#F0F1F3] border-2 rounded-[39px]' >
