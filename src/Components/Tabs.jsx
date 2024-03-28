@@ -6,6 +6,7 @@ import Left_hand from '../Images/Left_hand.png';
 import Mobile from '../Images/mobile.png';
 import Speech_bubble from '../Images/Speech_bubble.png';
 import { useState } from "react";
+import CRUD from "./CRUD";
 
 function Tabs() {
     let [tabs, setTabs] = useState(0)
@@ -28,7 +29,7 @@ function Tabs() {
     <div className="h-[100px] flex justify-center mt-10 ">
         <div className="flex gap-5">
             <div onClick={RandomImageGenerator}><Button value="Random Image Generator" variant="Primary"/></div>
-            <div onClick={() => {setTabs(1)}}><Button value="Tab 2" variant="Primary"/></div>
+            <div onClick={() => {setTabs(1)}}><Button value="CRUD App" variant="Primary"/></div>
             <div onClick={() => {setTabs(2)}}><Button value="Tab 3" variant="Primary"/></div>
         </div>
     </div>
@@ -45,7 +46,7 @@ function Tabs() {
     </section>
 
     <section className={`${tabs == 1 ? "block" : "hidden"}`}>
-        <p>Woooooooooo Good</p>
+        <CRUD />
     </section>
 
     <section className={`${tabs == 2 ? "block" : "hidden"}`}>
