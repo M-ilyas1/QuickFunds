@@ -3,26 +3,26 @@ import { useState } from "react";
 function CRUD() {
   const [data, setData] = useState([]);
   const [itemName, setItemName] = useState("");
-  const [itemPrice, setItemPrice] = useState(0);
+  const [itemPrice, setItemPrice] = useState();
 
   const handleAddData = (e) => {
     e.preventDefault();
 
     const addData = {
       id: Date.now(),
-      itemName: itemName,
-      itemPrice: itemPrice
+      itemName:  itemName,
+      itemPrice: itemPrice,
     };
 
     setData([...data, addData]);
 
     // Clear input fields after adding data
-    setItemName('');
-    setItemPrice('');
+    setItemName("");
+    setItemPrice("");
   };
 
-  if(setItemName == ""){
-    alert("Kindly Enter Data")
+  if (setItemName == "") {
+    alert("Kindly Enter Data");
   }
 
   return (
@@ -55,14 +55,29 @@ function CRUD() {
         </button>
       </form>
 
-      <div>
-        <ul>
+      <div className="">
+        <table className="gap-5">
           {data.map(({ itemName, itemPrice, id }) => (
-            <li key={id}>
-              Name: {itemName}, Price: {itemPrice}
-            </li>
+            <tr key={id} className="bg-[#ffffff] border-2 border-[#2A6877]">
+              <td className="p-5 ">Name: {itemName}</td>
+              <td className="p-5 ">Price: {itemPrice}</td>
+              <td className="p-5 ">
+                <button
+                  className="px-[20px] py-[12px] bg-[#2A6877] border-2 rounded-full text-white"
+                >
+                  Edit
+                </button>
+              </td>
+              <td className="p-5 ">
+                <button
+                  className="px-[20px] py-[12px] bg-[#2A6877] border-2 rounded-full text-white"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
           ))}
-        </ul>
+        </table>
       </div>
     </div>
   );
