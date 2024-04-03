@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 
 function Header() {
+  
   const [toggle, setToggle] = useState(false);
   function toggler() {
     setToggle(!toggle);
